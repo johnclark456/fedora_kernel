@@ -1,3 +1,21 @@
+To use this tree you must set the origin repo to be https://src.fedoraproject.org/rpms/kernel.git and regularly rebase it.
+i.e. after cloning do this once only::
+
+    git remote set-url origin https://src.fedoraproject.org/rpms/kernel.git
+
+Then before building::
+
+    git fetch
+    git rebase origin/f36
+
+
+In order to build::
+
+    fedpkg local
+
+Then install the resulting RPMs in `x86_64`. You can ignore the debug RPMS.
+
+
 ===================
 The Kernel dist-git
 ===================
